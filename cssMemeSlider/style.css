@@ -24,111 +24,104 @@ a:hover, a:active, a:focus {
     background-color: pink;
     padding: 30px 40px 120px;
     display: flex;
-    flex-direction: column;
+    justify-content: center;
+}
+
+.meme-slider-smaller-wrapper {
+    width: 70%;
+    padding: 20px;
+    background-color: black;
+    border-radius: 20px;
 }
 
 .meme-slider {
-    display: flex;
-    justify-content: center;
-    box-shadow: 10px 10px 15px 0 rgba(0, 0, 0, 0.5);
-    transition: transform 0.5s ease-in-out;
-    border-radius: 9px;
-}
-
-.meme-slide {
     width: 100%;
-    height: 80vh;
-    border-radius: 9px;
-
-}
-
-.indicators {
-    text-align: right;
-    margin-top: 30px;
-}
-
-.indicators .dot {
-    display: inline-block;
-    width: 10px;
-    height: 10px;
-    margin: 0 5px;
-    background-color: #ddd;
-    border-radius: 50%;
-    cursor: pointer;
-}
-
-.indicators .dot.active {
-    background-color: #333;
-}
-
-.hidden {
-    display: none;
-}
-
-.slider {
-    position: relative;
-    width: 100%;
-    max-width: 600px;
-    margin: auto;
     overflow: hidden;
 }
 
-.slides {
+.meme-slides {
     display: flex;
-    /*width: 300%;*/
     transition: transform 0.5s ease-in-out;
 }
 
-.slide {
+.meme-slider-slide {
     width: 100%;
+    height: 500px;
     flex-shrink: 0;
-    position: relative;
+    background-color: black;
+    padding: 30px;
+    display: flex;
 }
 
-.slide img {
+.meme-slider-slide img {
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 20px;
+    margin: 0 auto;
+}
+
+.meme-phrases {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    padding-top: 20px;
+}
+
+.meme-slider-phrase {
+    color: royalblue;
+    font-family: Georgia, sans-serif;
+    font-size: large;
+    font-weight: bold;
+    flex-shrink: 0;
     width: 100%;
-    display: block;
+
 }
 
 input[type="radio"] {
     display: none;
 }
 
-#slide1:checked ~ .slides {
+#slide1:checked ~ .meme-slides {
     transform: translateX(0%);
 }
 
-#slide2:checked ~ .slides {
+#slide2:checked ~ .meme-slides {
     transform: translateX(-100%);
 }
 
-#slide3:checked ~ .slides {
+#slide3:checked ~ .meme-slides {
     transform: translateX(-200%);
 }
 
-.prev, .next {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    padding: 10px;
-    cursor: pointer;
-    font-size: 20px;
-    z-index: 10;
+#slide4:checked ~ .meme-slides {
+    transform: translateX(-300%);
 }
 
-.prev {
-    left: 10px;
+#slide5:checked ~ .meme-slides {
+    transform: translateX(-400%);
 }
 
-.next {
-    right: 10px;
+#slide1:checked ~ .meme-phrases {
+    transform: translateX(0%);
+}
+
+#slide2:checked ~ .meme-phrases {
+    transform: translateX(-100%);
+}
+
+#slide3:checked ~ .meme-phrases {
+    transform: translateX(-200%);
+}
+
+#slide4:checked ~ .meme-phrases {
+    transform: translateX(-300%);
+}
+
+#slide5:checked ~ .meme-phrases {
+    transform: translateX(-400%);
 }
 
 .indicators {
-    text-align: center;
-    margin-top: 10px;
+    text-align: right;
 }
 
 .dot {
@@ -143,6 +136,8 @@ input[type="radio"] {
 
 input#slide1:checked ~ .indicators label[for="slide1"],
 input#slide2:checked ~ .indicators label[for="slide2"],
-input#slide3:checked ~ .indicators label[for="slide3"] {
+input#slide3:checked ~ .indicators label[for="slide3"],
+input#slide4:checked ~ .indicators label[for="slide4"],
+input#slide5:checked ~ .indicators label[for="slide5"]{
     background-color: #333;
 }
