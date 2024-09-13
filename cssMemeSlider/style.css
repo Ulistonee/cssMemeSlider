@@ -122,6 +122,24 @@ input[type="radio"] {
 
 .indicators {
     text-align: right;
+    padding-top: 20px;
+    display: flex;
+    justify-content: right;
+}
+
+.dot-wrapper {
+    display: flex;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    background-color: black;
+}
+
+.dot-wrapper:hover {
+    color: #ddd;
 }
 
 .dot {
@@ -130,14 +148,19 @@ input[type="radio"] {
     height: 10px;
     background-color: #ddd;
     border-radius: 50%;
-    margin: 0 5px;
+    margin: 20px 5px;
     cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
-input#slide1:checked ~ .indicators label[for="slide1"],
-input#slide2:checked ~ .indicators label[for="slide2"],
-input#slide3:checked ~ .indicators label[for="slide3"],
-input#slide4:checked ~ .indicators label[for="slide4"],
-input#slide5:checked ~ .indicators label[for="slide5"]{
+.dot:hover {
+    color: #ddd;
+}
+
+input#slide1:checked ~ .indicators label[for="slide1"] span,
+input#slide2:checked ~ .indicators label[for="slide2"] span,
+input#slide3:checked ~ .indicators label[for="slide3"] span,
+input#slide4:checked ~ .indicators label[for="slide4"] span,
+input#slide5:checked ~ .indicators label[for="slide5"] span{
     background-color: #333;
 }
