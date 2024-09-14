@@ -75,14 +75,14 @@ a:hover, a:active, a:focus {
 }
 
 .meme-slider-phrase {
-    color: royalblue;
+    color: white;
     font-family: Georgia, sans-serif;
     font-size: large;
     font-weight: bold;
     flex-shrink: 0;
     width: 100%;
     opacity: 0;
-    transition: opacity 1s ease-in-out;
+    transition: opacity 2s ease-in-out;
 }
 
 input[type="radio"] {
@@ -147,15 +147,11 @@ input[type="radio"] {
     background-color: black;
 }
 
-.dot-wrapper:hover {
-    color: #ddd;
-}
-
 .dot {
     display: inline-block;
-    width: 10px;
-    height: 10px;
-    background-color: #ddd;
+    width: 15px;
+    height: 15px;
+    background-color: lightskyblue;
     border-radius: 50%;
     margin: 20px 5px;
     cursor: pointer;
@@ -163,7 +159,7 @@ input[type="radio"] {
 }
 
 .dot:hover {
-    color: #ddd;
+    background-color: #ddd;
 }
 
 input#slide1:checked ~ .indicators label[for="slide1"] span,
@@ -172,6 +168,14 @@ input#slide3:checked ~ .indicators label[for="slide3"] span,
 input#slide4:checked ~ .indicators label[for="slide4"] span,
 input#slide5:checked ~ .indicators label[for="slide5"] span{
     background-color: #333;
+}
+
+input#slide1:checked ~ .indicators label[for="slide1"] span:hover,
+input#slide2:checked ~ .indicators label[for="slide2"] span:hover,
+input#slide3:checked ~ .indicators label[for="slide3"] span:hover,
+input#slide4:checked ~ .indicators label[for="slide4"] span:hover,
+input#slide5:checked ~ .indicators label[for="slide5"] span:hover {
+    background-color: #ddd;
 }
 
 #slide1:checked ~ .meme-phrases-wrapper .meme-phrases .meme-slider-phrase:nth-child(1),
