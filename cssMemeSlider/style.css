@@ -185,3 +185,26 @@ input#slide5:checked ~ .indicators label[for="slide5"] span:hover {
 #slide5:checked ~ .meme-phrases-wrapper .meme-phrases .meme-slider-phrase:nth-child(5) {
     opacity: 1;
 }
+
+@media (max-width: 1000px) {
+    .meme-slider {
+        order: 0;
+        justify-items: center;
+        align-items: center;
+    }
+
+    .meme-phrases-wrapper {
+        grid-column: span 2 / span 2;
+        order: 2;
+
+    }
+
+    .meme-phrases {
+       text-align: center;
+    }
+
+    .indicators {
+        grid-column: span 2 / span 2;
+        order: 1;
+    }
+}
