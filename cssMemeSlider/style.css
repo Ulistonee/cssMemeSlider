@@ -35,6 +35,8 @@ a:hover, a:active, a:focus {
 }
 
 .meme-slider {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     width: 100%;
     overflow: hidden;
 }
@@ -42,6 +44,7 @@ a:hover, a:active, a:focus {
 .meme-slides {
     display: flex;
     transition: transform 0.5s ease-in-out;
+    grid-column: span 2 / span 2;
 }
 
 .meme-slider-slide {
@@ -60,10 +63,15 @@ a:hover, a:active, a:focus {
     margin: 0 auto;
 }
 
+.meme-phrases-wrapper {
+    margin-top: 20px;
+    width: 100%;
+    overflow: hidden;
+}
+
 .meme-phrases {
     display: flex;
     transition: transform 0.5s ease-in-out;
-    padding-top: 20px;
 }
 
 .meme-slider-phrase {
@@ -73,7 +81,8 @@ a:hover, a:active, a:focus {
     font-weight: bold;
     flex-shrink: 0;
     width: 100%;
-
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
 }
 
 input[type="radio"] {
@@ -104,19 +113,19 @@ input[type="radio"] {
     transform: translateX(0%);
 }
 
-#slide2:checked ~ .meme-phrases {
+#slide2:checked ~ .meme-phrases-wrapper .meme-phrases {
     transform: translateX(-100%);
 }
 
-#slide3:checked ~ .meme-phrases {
+#slide3:checked ~ .meme-phrases-wrapper .meme-phrases {
     transform: translateX(-200%);
 }
 
-#slide4:checked ~ .meme-phrases {
+#slide4:checked ~ .meme-phrases-wrapper .meme-phrases {
     transform: translateX(-300%);
 }
 
-#slide5:checked ~ .meme-phrases {
+#slide5:checked ~ .meme-phrases-wrapper .meme-phrases {
     transform: translateX(-400%);
 }
 
@@ -163,4 +172,12 @@ input#slide3:checked ~ .indicators label[for="slide3"] span,
 input#slide4:checked ~ .indicators label[for="slide4"] span,
 input#slide5:checked ~ .indicators label[for="slide5"] span{
     background-color: #333;
+}
+
+#slide1:checked ~ .meme-phrases-wrapper .meme-phrases .meme-slider-phrase:nth-child(1),
+#slide2:checked ~ .meme-phrases-wrapper .meme-phrases .meme-slider-phrase:nth-child(2),
+#slide3:checked ~ .meme-phrases-wrapper .meme-phrases .meme-slider-phrase:nth-child(3),
+#slide4:checked ~ .meme-phrases-wrapper .meme-phrases .meme-slider-phrase:nth-child(4),
+#slide5:checked ~ .meme-phrases-wrapper .meme-phrases .meme-slider-phrase:nth-child(5) {
+    opacity: 1;
 }
