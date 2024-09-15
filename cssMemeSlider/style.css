@@ -20,6 +20,10 @@ a:hover, a:active, a:focus {
     text-decoration: none;
 }
 
+.general-wrapper {
+    background-color: pink;
+}
+
 .meme-slider-wrapper {
     background-color: pink;
     padding-top: 0.5rem; /* 30px */
@@ -142,12 +146,13 @@ input[type="radio"] {
     display: flex;
     justify-content: right;
     padding-right: 0.8rem; /* 20px */
+    column-gap: 0.7rem;
 }
 
 .dot-wrapper {
     display: flex;
-    width: 1.87rem; /* 30px */
-    height: 1.87rem; /* 30px */
+    width: 1.5rem; /* 30px */
+    height: 1.5rem; /* 30px */
     border-radius: 50%;
     justify-content: center;
     align-items: center;
@@ -157,13 +162,11 @@ input[type="radio"] {
 
 .dot {
     display: inline-block;
-    width: 30%; /* 15px */
-    height: 30%; /* 15px */
+    width: 40%; /* 15px */
+    height: 40%; /* 15px */
     background-color: lightskyblue;
     border-radius: 50%;
     margin-top: 1.25rem; /* 20px */
-    margin-right: 0.2rem; /* 5px */
-    margin-left: 0.2rem; /* 5px */
     margin-bottom: 1.25rem; /* 20px */
     cursor: pointer;
     transition: background-color 0.3s ease;
@@ -201,7 +204,18 @@ input#slide5:checked ~ .indicators label[for="slide5"] span:hover {
     opacity: 1;
 }
 
+@media (max-width: 825px) {
+    .meme-slider-wrapper {
+        padding: 1rem;
+    }
+
+    .meme-slider-smaller-wrapper {
+        width: 80%;
+    }
+}
+
 @media (max-width: 1000px) {
+
     .meme-slider {
         order: 0;
         justify-items: center;
